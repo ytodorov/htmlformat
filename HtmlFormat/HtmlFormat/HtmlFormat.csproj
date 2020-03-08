@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="HtmlMinificationMiddleware" Version="3.1.0" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <None Update="amp.min.css">
