@@ -20,6 +20,9 @@ jobs:
       with:
         dotnet-version: '3.0.103'
 
+    - name: ListCurrentDirr
+      run: dir
+    
     - name: Build with dotnet
       run: dotnet build HtmlFormat.csproj --configuration Release
 
