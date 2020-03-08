@@ -6,6 +6,9 @@
 
 
   <ItemGroup>
+    <None Update="amp.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
