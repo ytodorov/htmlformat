@@ -21,7 +21,7 @@ jobs:
         dotnet-version: '3.0.103'
 
     - name: Build with dotnet
-      run: dotnet build --configuration Release
+      run: dotnet build ${{env.DOTNET_ROOT}}/HtmlFormat/HtmlFormat/HtmlFormat.csproj --configuration Release
 
     - name: dotnet publish
       run: dotnet publish ${{env.DOTNET_ROOT}}/HtmlFormat/HtmlFormat/HtmlFormat.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
