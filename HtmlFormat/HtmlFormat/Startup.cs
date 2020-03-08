@@ -62,6 +62,9 @@ namespace HtmlFormat
 
             FileExtensionContentTypeProvider provider = new FileExtensionContentTypeProvider();
             provider.Mappings[".webmanifest"] = "application/manifest+json";
+            
+            // This must be before UseHTMLMinification !!!
+            app.UseResponseCompression();
 
             if (env.EnvironmentName != "Development")
             {
@@ -75,7 +78,7 @@ namespace HtmlFormat
                .Add(new RedirectLowerCaseRule())
                );
 
-            app.UseResponseCompression();
+          
 
             app.UseEndpoints(endpoints =>
             {
