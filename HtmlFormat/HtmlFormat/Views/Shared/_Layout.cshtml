@@ -10,6 +10,7 @@
     <partial name="_AmpCustomCssPartial.cshtml" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap" rel="stylesheet">
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 </head>
 <body>
@@ -27,9 +28,11 @@
             </div>
         </div>
     </header>
-    <main id="content" role="main" class="main commerce-listing">
+    <main id="content" role="main" class="main">
         <div class="center">
-            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+            <textarea name="tbInput" [text]="myFormattedHtml" id="tbInput" class="block p0 m0" style="width:100%;height:300px" placeholder="Paste your code or a URL here .."></textarea>
+            <button name="btnFormat" id="btnFormat" class="ampstart-btn btn-primary caps">Format</button>
+            <button name="btnClear" id="btnClear" class="ampstart-btn ampstart-btn-secondary caps" on="tap:AMP.setState({ myFormattedHtml: '' })">Clear</button>
         </div>
     </main>
     <footer class="commerce-footer center">
