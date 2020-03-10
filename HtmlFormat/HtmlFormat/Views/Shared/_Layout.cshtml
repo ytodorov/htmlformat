@@ -12,6 +12,8 @@
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 </head>
 <body>
     <!-- Google Tag Manager -->
@@ -28,13 +30,27 @@
             </div>
         </div>
     </header>
-    <main id="content" role="main" class="main">
-        <div class="center">
-            <textarea name="tbInput" [text]="myFormattedHtml" id="tbInput" class="block p0 m0" style="width:100%;height:300px" placeholder="Paste your code or a URL here .."></textarea>
-            <button name="btnFormat" id="btnFormat" class="ampstart-btn btn-primary caps">Format</button>
-            <button name="btnClear" id="btnClear" class="ampstart-btn ampstart-btn-secondary caps" on="tap:AMP.setState({ myFormattedHtml: '' })">Clear</button>
-        </div>
+
+    <main id="content" role="main" class="main center">
+        <form action-xhr="/home/format" method="post">
+            <textarea name="tbInput" [text]="rawHtml" id="tbInput" class="block p0 m0" style="width:100%;height:300px" placeholder="Paste your code or a URL here .."></textarea>
+            <div>
+                <input type="submit" class="ampstart-btn ampstart-btn-secondary caps" value="Format" />
+                <button name="btnClear" id="btnClear" class="ampstart-btn ampstart-btn-secondary caps" on="tap:AMP.setState({ rawHtml: '' })">Clear</button>
+            </div>
+            <div submit-success>
+                <template type="amp-mustache">
+                    <textarea name="tbOutput" id="tbOutput" class="block p0 m0" style="width:100%;height:300px" readonly>{{formattedHtml}}</textarea>
+                </template>
+            </div>
+            <div submit-error>
+                <template type="amp-mustache">
+                    error
+                </template>
+            </div>
+        </form>
     </main>
+
     <footer class="commerce-footer center">
         <nav class="mx-auto md-mb0 md-pt5 md-pb5">
             <ul class="list-reset flex flex-wrap my0 md-pl4 md-pr4 md-mxn4">
