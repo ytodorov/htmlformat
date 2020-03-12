@@ -6,6 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using DotnetThoughts.AspNetCore;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -29,6 +30,8 @@ namespace HtmlFormat
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
+
             services.AddControllersWithViews();
 
             services.Configure<BrotliCompressionProviderOptions>(options =>
@@ -65,6 +68,12 @@ namespace HtmlFormat
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseExceptionHandler(a => a.Run(async context =>
+            {
+                IExceptionHandlerPathFeature feature = context.Features.Get<IExceptionHandlerPathFeature>();
+                Exception exception = feature.Error;
+            }));
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -83,8 +92,8 @@ namespace HtmlFormat
             app.UseRewriter(new RewriteOptions()
                .AddRedirect("(.*)/$", "$1", (int)HttpStatusCode.MovedPermanently) // Strip trailing slash
                .AddRedirectToWww()
-               .AddRedirectToHttps()
                .Add(new RedirectLowerCaseRule())
+               .AddRedirectToHttps()
                );
 
           

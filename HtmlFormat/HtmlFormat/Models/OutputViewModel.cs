@@ -10,5 +10,7 @@ namespace HtmlFormat.Models
         public string RawHtml { get; set; }
 
         public string FormattedHtml { get; set; }
+
+        public string Guid { get; set; }
     }
 }

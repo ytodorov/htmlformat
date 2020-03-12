@@ -14,6 +14,7 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 </head>
 <body>
     <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-5FSSXC5&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
@@ -27,19 +28,33 @@
         <div class="ampstart-headerbar-fixed center m0 p0 flex justify-center nowrap absolute top-0 right-0 pt2 pr3">
             <div class="mr2">
             </div>
-        </div>
+        </div>        
     </header>
 
     <main id="content" role="main" class="main center">
         <form action-xhr="/home/format" method="post" class="mb2">
-            <textarea name="tbInput" [text]="rawHtml" id="tbInput" class="block p0 m0 mb2" style="width:100%;height:300px" placeholder="Paste your code or a URL here .."></textarea>
+            <textarea name="tbInput" [text]="rawHtml" id="tbInput" class="block p0 m0 mb2" style="width:100%;height:500px" placeholder="Paste your code or a URL here .."></textarea>
             <p class="mb2">
                 <input type="submit" class="ampstart-btn ampstart-btn-secondary caps" value="Format" />
                 <button name="btnClear" id="btnClear" class="ampstart-btn ampstart-btn-secondary caps" on="tap:AMP.setState({ rawHtml: '' })">Clear</button>
             </p>
             <div submit-success class="mb2">
                 <template type="amp-mustache">
-                    <textarea name="tbOutput" id="tbOutput" class="block p0 m0" style="width:100%;height:300px" readonly>{{formattedHtml}}</textarea>
+                    <amp-iframe width="100"
+                                height="500"
+                                sandbox="allow-scripts"
+                                layout="responsive"
+                                src="https://localhost:44392/home/codemirror?guid={{guid}}">
+                    </amp-iframe>
+                    @*<amp-iframe width="500"
+                                height="281"
+                                title="Netflix House of Cards branding: The Stack"
+                                layout="responsive"
+                                sandbox="allow-scripts allow-same-origin allow-popups"
+                                allowfullscreen
+                                frameborder="0"
+                                src="https://player.vimeo.com/video/140261016">
+                    </amp-iframe>*@
                 </template>
             </div>
             <div submit-error class="mb2">
@@ -47,7 +62,7 @@
                     error
                 </template>
             </div>
-        </form>
+        </form>        
     </main>
 
     <footer class="commerce-footer center">

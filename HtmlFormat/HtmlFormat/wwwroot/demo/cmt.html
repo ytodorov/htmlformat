@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel=stylesheet href="../doc/docs.css">
+
+    <link rel="stylesheet" href="../lib/codemirror.css">
+    <link rel="stylesheet" href="../addon/hint/show-hint.css">
+    <script src="../lib/codemirror.js"></script>
+    <script src="../addon/hint/show-hint.js"></script>
+    <script src="../addon/hint/xml-hint.js"></script>
+    <script src="../addon/hint/html-hint.js"></script>
+    <script src="../mode/xml/xml.js"></script>
+    <script src="../mode/javascript/javascript.js"></script>
+    <script src="../mode/css/css.js"></script>
+    <script src="../mode/htmlmixed/htmlmixed.js"></script>
+    <style>
+        .CodeMirror {
+            border-top: 1px solid #888;
+            border-bottom: 1px solid #888;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="myTextarea">
+<pre>
+!-- Include stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+<!-- Create the editor container -->
+<div id="editor">
+  <p>Hello World!</p>
+  <p>Some initial <strong>bold</strong> text</p>
+  <p><br></p>
+</div>
+</pre>
+</textarea>
+    <script>
+        var editor = CodeMirror.fromTextArea(myTextarea, {
+            lineNumbers: true,
+            readOnly: true,            
+        });
+    </script>
+</body>
+</html>

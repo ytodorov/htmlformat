@@ -10,6 +10,7 @@ using AngleSharp.Html.Parser;
 using System.IO;
 using AngleSharp.Html;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace HtmlFormat.Controllers
 {
@@ -17,14 +18,28 @@ namespace HtmlFormat.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IMemoryCache memoryCache;
+
+        public HomeController(ILogger<HomeController> logger,
+            IMemoryCache memoryCache)
         {
-            _logger = logger;  
+            _logger = logger;
+            this.memoryCache = memoryCache;
         }
 
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult CodeMirror(string guid)
+        {
+            var formattedHtml = string.Empty;
+            if (!string.IsNullOrEmpty(guid))
+            {
+                formattedHtml = memoryCache.Get(guid)?.ToString();
+            }
+            return View((object)formattedHtml);
         }
 
         public IActionResult Format(InputViewModel inputViewModel)
@@ -39,13 +54,19 @@ namespace HtmlFormat.Controllers
 
             document.ToHtml(sw, prettyMarkupFormatter);
 
-            var indentedHtml = sw.ToString();
+            var formattedHtml = sw.ToString();
+
+            string guid = Guid.NewGuid().ToString();
+            
 
             var result = new OutputViewModel()
             {
                 RawHtml = inputViewModel.tbInput,
-                FormattedHtml = indentedHtml,
+                FormattedHtml = formattedHtml,
+                Guid = guid,
             };
+
+            memoryCache.Set(guid, formattedHtml);
 
             return Json(result);
         }
