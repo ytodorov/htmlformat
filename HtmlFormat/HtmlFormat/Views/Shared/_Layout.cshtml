@@ -33,28 +33,35 @@
 
     <main id="content" role="main" class="main center">
         <form action-xhr="/home/format" method="post" class="mb2">
-            <textarea name="tbInput" [text]="rawHtml" id="tbInput" class="block p0 m0 mb2" style="width:100%;height:500px" placeholder="Paste your code or a URL here .."></textarea>
+            <textarea name="tbInput" [text]="rawHtml" id="tbInput" class="hljs xml mb2" style="width:100%;height:500px" placeholder="Paste your code or a URL here .."></textarea>
             <p class="mb2">
                 <input type="submit" class="ampstart-btn ampstart-btn-secondary caps" value="Format" />
                 <button name="btnClear" id="btnClear" class="ampstart-btn ampstart-btn-secondary caps" on="tap:AMP.setState({ rawHtml: '' })">Clear</button>
             </p>
             <div submit-success class="mb2">
                 <template type="amp-mustache">
-                    <amp-iframe width="100"
+                    @*<amp-iframe width="200"
+                                height="100"
+                                sandbox="allow-scripts allow-same-origin"
+                                layout="responsive"
+                                frameborder="0"
+                                src="https://jafpwebstaging.ja.org/">*@
+                    <amp-iframe width="auto"
                                 height="500"
                                 sandbox="allow-scripts"
-                                layout="responsive"
+                                layout="fixed-height"
                                 src="https://www.htmlformat.org/home/codemirror?guid={{guid}}">
+
                     </amp-iframe>
-                    @*<amp-iframe width="500"
-                                height="281"
-                                title="Netflix House of Cards branding: The Stack"
-                                layout="responsive"
-                                sandbox="allow-scripts allow-same-origin allow-popups"
-                                allowfullscreen
-                                frameborder="0"
-                                src="https://player.vimeo.com/video/140261016">
-                    </amp-iframe>*@
+                        @*<amp-iframe width="500"
+                        height="281"
+                        title="Netflix House of Cards branding: The Stack"
+                        layout="responsive"
+                        sandbox="allow-scripts allow-same-origin allow-popups"
+                        allowfullscreen
+                        frameborder="0"
+                        src="https://player.vimeo.com/video/140261016">
+            </amp-iframe>*@
                 </template>
             </div>
             <div submit-error class="mb2">
