@@ -16,12 +16,18 @@
     <script src="/mode/javascript/javascript.js"></script>
     <script src="/mode/css/css.js"></script>
     <script src="/mode/htmlmixed/htmlmixed.js"></script>
+    <style>
+        .CodeMirror {
+  border: 1px solid #eee;
+}
+    </style>
 </head>
-<body>
+<body style="background-color:white">
     <textarea id="myTextarea">@Model</textarea>
     <script>
         var editor = CodeMirror.fromTextArea(myTextarea, {
             lineNumbers: true,
+            mode: "text/html",
             readOnly: false,
         });
     </script>

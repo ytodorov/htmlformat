@@ -11,6 +11,9 @@ using System.IO;
 using AngleSharp.Html;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Caching.Memory;
+using System.Text;
+using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Hosting;
 
 namespace HtmlFormat.Controllers
 {
@@ -20,16 +23,32 @@ namespace HtmlFormat.Controllers
 
         private readonly IMemoryCache memoryCache;
 
-        public HomeController(ILogger<HomeController> logger,
-            IMemoryCache memoryCache)
+        private readonly IWebHostEnvironment env;
+
+
+        public HomeController(
+            ILogger<HomeController> logger,
+            IMemoryCache memoryCache,
+            IWebHostEnvironment env)
         {
             _logger = logger;
             this.memoryCache = memoryCache;
+            this.env = env;
         }
 
         public IActionResult Index()
         {
-            return View();
+            HomeViewModel homeViewModel = new HomeViewModel();
+            homeViewModel.Title = "HTML Format";
+            homeViewModel.Description = "Your on-line tool to format any HTML code.";
+
+            homeViewModel.BaseUrl = "https://www.htmlformat.org/";
+            if (env.EnvironmentName.Equals("Development"))
+            {
+                homeViewModel.BaseUrl = "https://localhost:44392/";
+            }
+
+            return View(homeViewModel);
         }
 
         public IActionResult CodeMirror(string guid)
@@ -38,7 +57,10 @@ namespace HtmlFormat.Controllers
             if (!string.IsNullOrEmpty(guid))
             {
                 formattedHtml = memoryCache.Get(guid)?.ToString();
+                formattedHtml = Regex.Replace(formattedHtml, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                
             }
+
             return View((object)formattedHtml);
         }
 
