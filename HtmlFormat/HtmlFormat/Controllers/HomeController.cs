@@ -42,6 +42,11 @@ namespace HtmlFormat.Controllers
             return View((object)formattedHtml);
         }
 
+        public IActionResult Test()
+        {
+            return View();
+        }
+
         public IActionResult Format(InputViewModel inputViewModel)
         {
             HtmlParserOptions htmlParserOptions = new HtmlParserOptions();
