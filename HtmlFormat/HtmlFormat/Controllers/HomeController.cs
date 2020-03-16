@@ -40,12 +40,12 @@ namespace HtmlFormat.Controllers
         {
             HomeViewModel homeViewModel = new HomeViewModel();
             homeViewModel.Title = "HTML Format";
-            homeViewModel.Description = "Your on-line tool to format any HTML code.";
+            homeViewModel.Description = "Your on-line tool to format any HTML code";
 
-            homeViewModel.BaseUrl = "https://www.htmlformat.org/";
+            homeViewModel.BaseUrlWithoutTrailingSlash = "https://www.htmlformat.org";
             if (env.EnvironmentName.Equals("Development"))
             {
-                homeViewModel.BaseUrl = "https://localhost:44392/";
+                homeViewModel.BaseUrlWithoutTrailingSlash = "https://localhost:44392";
             }
 
             return View(homeViewModel);
@@ -57,7 +57,10 @@ namespace HtmlFormat.Controllers
             if (!string.IsNullOrEmpty(guid))
             {
                 formattedHtml = memoryCache.Get(guid)?.ToString();
-                formattedHtml = Regex.Replace(formattedHtml, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                if (!string.IsNullOrWhiteSpace(formattedHtml))
+                {
+                    formattedHtml = Regex.Replace(formattedHtml, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+                }
                 
             }
 

@@ -4,23 +4,10 @@
 <html ⚡="" lang="en">
 <head>
     <meta charset="utf-8">
-    <title>@Model?.Title</title>
-    <script type="application/ld+json">
-        {
-        "@@context": "http://schema.org",
-        "@@type": "Webpage",
-        "url": "@Model?.BaseUrlWithoutTrailingSlash",
-        "name": "@Model?.Title",
-        "headline": @Model?.Title",
-        "description": "@Model?.Description",
-        "mainEntityOfPage": {
-        "@@type": "WebPage",
-        "@@id": "@Model?.BaseUrlWithoutTrailingSlash"
-        }
-        }
-    </script>
+    <title>HTML Format</title>
     <link rel="canonical" href="https://www.htmlformat.org/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="UA-43988280-10" content="googleanalytics">
     <partial name="_BoilerplateCssPartial.cshtml" />
     <partial name="_AmpCustomCssPartial.cshtml" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap" rel="stylesheet">
@@ -49,7 +36,7 @@
         </div>
     </header>
 
-    <main id="content" role="main" class="center" style="margin-top: 0px">
+    <main id="content" role="main" class="center">
         <h2>
             @Model?.Description
         </h2>
@@ -57,9 +44,32 @@
                     height="400"
                     sandbox="allow-scripts"
                     layout="fixed-height"
-                    src="@(Model.BaseUrlWithoutTrailingSlash)/home/codemirror?guid={{guid}}">
-            <amp-img layout="fill" src="@(Model.BaseUrlWithoutTrailingSlash)/whiteimage.png" placeholder></amp-img>
+                    src="https://localhost:44392/home/codemirror?guid={{guid}}">
+            <amp-img layout="fill" src="https://localhost:44392/whiteimage.png" placeholder></amp-img>
         </amp-iframe>
+
+        @*<form action-xhr="/home/format" method="post" class="mb2" on="submit-success:AMP.setState({ rawHtml: event.response.guid })">
+            <textarea name="tbInput" [text]="rawHtml" id="tbInput" class="hljs xml mb2" style="width:100%;height:300px" placeholder="Paste your code or a URL here .."></textarea>
+            <p class="mb2">
+                <input type="submit" class="ampstart-btn ampstart-btn-secondary caps" value="Format" />
+                <button name="btnClear" id="btnClear" class="ampstart-btn ampstart-btn-secondary caps" on="tap:AMP.setState({ rawHtml: '' })">Clear</button>
+            </p>
+            <div submit-success class="mb2">
+                <template type="amp-mustache">
+                    <amp-iframe width="auto"
+                                height="600"
+                                sandbox="allow-scripts"
+                                layout="fixed-height"
+                                src="https://localhost:44392/home/codemirror?guid={{guid}}">
+                    </amp-iframe>
+                </template>
+            </div>
+            <div submit-error class="mb2">
+                <template type="amp-mustache">
+                    Error !!!
+                </template>
+            </div>
+        </form>*@
     </main>
 
     <footer class="center">

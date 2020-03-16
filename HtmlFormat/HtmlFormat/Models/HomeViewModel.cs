@@ -7,7 +7,7 @@ namespace HtmlFormat.Models
 {
     public class HomeViewModel
     {
-        public string BaseUrl { get; set; }
+        public string BaseUrlWithoutTrailingSlash { get; set; }
 
         public string Title { get; set; }
 
