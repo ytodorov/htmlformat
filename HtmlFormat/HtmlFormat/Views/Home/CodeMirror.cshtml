@@ -33,8 +33,11 @@
 </head>
 <body style="background-color:white">
     <textarea id="myTextarea">@Model</textarea>
-    <button onclick="autoFormatSelection()" style="position:center">
+    <button onclick="autoFormatSelection()">
         Format
+    </button>
+    <button onclick="selectAll()">
+        Select All
     </button>
 
     <script>
@@ -49,6 +52,10 @@
 
         function getSelectedRange() {
             return { from: editor.getCursor(true), to: editor.getCursor(false) };
+        }
+
+        function selectAll() {
+            editor.execCommand("selectAll")
         }
 
         function autoFormatSelection() {
