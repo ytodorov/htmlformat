@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\amp.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\amp.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AngleSharp" Version="0.13.0" />
     <PackageReference Include="HtmlMinificationMiddleware" Version="3.1.0" />
   </ItemGroup>
