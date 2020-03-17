@@ -57,7 +57,7 @@
                     height="400"
                     sandbox="allow-scripts"
                     layout="fixed-height"
-                    src="@(Model.BaseUrlWithoutTrailingSlash)/home/codemirror?mode=text/html">
+                    src="@(Model.BaseUrlWithoutTrailingSlash)/home/codemirror?mode=@Model.CodeMirrorMode">
             <amp-img layout="fill" src="@(Model.BaseUrlWithoutTrailingSlash)/whiteimage.png" placeholder></amp-img>
         </amp-iframe>
     </main>

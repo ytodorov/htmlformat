@@ -48,8 +48,30 @@ namespace HtmlFormat.Controllers
                 homeViewModel.BaseUrlWithoutTrailingSlash = "https://localhost:44392";
             }
 
+            homeViewModel.CodeMirrorMode = "text/html";
+
             return View(homeViewModel);
         }
+
+        [Route("json")]
+        public IActionResult Json()
+        {
+            HomeViewModel homeViewModel = new HomeViewModel();
+            homeViewModel.Title = "HTML Format";
+            homeViewModel.Description = "Your on-line tool to format any HTML code";
+
+            homeViewModel.BaseUrlWithoutTrailingSlash = "https://www.htmlformat.org";
+            if (env.EnvironmentName.Equals("Development"))
+            {
+                homeViewModel.BaseUrlWithoutTrailingSlash = "https://localhost:44392";
+            }
+
+            homeViewModel.CodeMirrorMode = "application/json";
+
+            return View(homeViewModel);
+        }
+
+
 
         public IActionResult CodeMirror(string mode)
         {
@@ -61,9 +83,25 @@ namespace HtmlFormat.Controllers
                 codeMirrorViewModel.DefaultValue =
                     @"<!doctype html>
 <html><head><meta charset=""utf-8"" /></head><body>
-Just click 'Format' button to see it in action.
+Just click Format button to see it in action.
 </body></html>";
             }
+
+            else if ("application/json".Equals(mode))
+            {
+                codeMirrorViewModel.DefaultValue =
+                   @"{
+    ""glossary"": {        ""title"":
+""Just click Format button to see it in action."",
+		""GlossDiv"": {            ""title"": ""S"",			""GlossList"": {                ""GlossEntry"": {                    ""ID"": ""SGML"",
+					""SortAs"": ""SGML"",
+					""SortAs"": ""SGML"",					""GlossTerm"": ""Standard Generalized Markup Language"",					""Acronym"": ""SGML"",					""Abbrev"": ""ISO 8879:1986"",
+					""GlossDef"": {                        ""para"": ""A meta-markup language, used to create markup languages such as DocBook."",						""GlossSeeAlso"": [""GML"", ""XML""]
+                    },
+					""GlossSee"": ""markup""
+                }            }        }    }}";
+            }
+
 
             return View(codeMirrorViewModel);
         }
