@@ -51,20 +51,21 @@ namespace HtmlFormat.Controllers
             return View(homeViewModel);
         }
 
-        public IActionResult CodeMirror(string guid)
+        public IActionResult CodeMirror(string mode)
         {
-            var formattedHtml = string.Empty;
-            if (!string.IsNullOrEmpty(guid))
+            CodeMirrorViewModel codeMirrorViewModel = new CodeMirrorViewModel();
+            codeMirrorViewModel.Mode = mode;
+
+            if ("text/html".Equals(mode))
             {
-                formattedHtml = memoryCache.Get(guid)?.ToString();
-                if (!string.IsNullOrWhiteSpace(formattedHtml))
-                {
-                    formattedHtml = Regex.Replace(formattedHtml, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
-                }
-                
+                codeMirrorViewModel.DefaultValue =
+                    @"<!doctype html>
+<html><head><meta charset=""utf-8"" /></head><body>
+Just click 'Format' button to see it in action.
+</body></html>";
             }
 
-            return View((object)formattedHtml);
+            return View(codeMirrorViewModel);
         }
 
         public IActionResult Test()
