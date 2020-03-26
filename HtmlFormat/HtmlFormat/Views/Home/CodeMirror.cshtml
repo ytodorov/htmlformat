@@ -53,6 +53,8 @@
             gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
         });
 
+        editor.setSize("100%", "80%");
+
         function getSelectedRange() {
             return { from: editor.getCursor(true), to: editor.getCursor(false) };
         }

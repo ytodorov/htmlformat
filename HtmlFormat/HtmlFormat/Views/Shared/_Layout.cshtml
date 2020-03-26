@@ -1,5 +1,4 @@
 ﻿@model HtmlFormat.Models.HomeViewModel
-
 <!doctype html>
 <html ⚡="" lang="en">
 <head>
@@ -25,43 +24,49 @@
     <partial name="_AmpCustomCssPartial.cshtml" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap" rel="stylesheet">
     <script async="" src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async custom-element="amp-addthis" src="https://cdn.ampproject.org/v0/amp-addthis-0.1.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
 </head>
 <body>
     <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-5FSSXC5&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
-
-    <header class="ampstart-headerbar flex justify-start items-center top-0 left-0 right-0 pl2 pr4 pt2 md-pt0">
-        <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger  pr2 absolute top-0 pr0 mr2 mt2">
+    <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
+        <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide pr2  ">
+            ☰
         </div>
-        <a href="/" class="text-decoration-none inline-block mx-auto ampstart-headerbar-home-link mb1 md-mb0 ">
-            <h1>
-                @Model?.Title
-            </h1>
+        <a href="@(Model?.BaseUrlWithoutTrailingSlash)" class="text-decoration-none inline-block mx-auto ampstart-headerbar-home-link  ">
+            <div class="ampstart-headerbar-title mx-auto "><h1 class="ampstart-title-sm">@(Model?.Title)</h1></div>
         </a>
-        <div class="ampstart-headerbar-fixed center m0 p0 flex justify-center nowrap absolute top-0 right-0 pt2 pr3">
+        <nav class="ampstart-headerbar-nav ampstart-nav  xs-hide sm-hide">
+            <ul class="list-reset center m0 p0 flex justify-center nowrap">
+                <li class="ampstart-nav-item "><a href="#" class="text-decoration-none block">About</a></li>
+                <li class="ampstart-nav-item "><a href="#" class="text-decoration-none block">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="ampstart-headerbar-fixed center m0 p0 flex justify-center nowrap ">
             <div class="mr2">
             </div>
         </div>
     </header>
-
-    <main id="content" role="main" class="center" style="margin-top: 0px">
-        <h2>
-            @Model?.Description
-        </h2>
+    <section class="relative mx-auto">
+        <h2 class="center">@(Model?.Description)</h2>
         <amp-iframe width="auto"
-                    height="400"
+                    height="500"
                     sandbox="allow-scripts"
                     layout="fixed-height"
-                    src="@(Model.BaseUrlWithoutTrailingSlash)/home/codemirror?mode=@Model.CodeMirrorMode">
-            <amp-img layout="fill" src="@(Model.BaseUrlWithoutTrailingSlash)/whiteimage.png" placeholder></amp-img>
+                    src="@(Model?.BaseUrlWithoutTrailingSlash)/home/codemirror?mode=@Model?.CodeMirrorMode">
+            <amp-img layout="fill" src="@(Model?.BaseUrlWithoutTrailingSlash)/whiteimage.png" placeholder></amp-img>
         </amp-iframe>
-    </main>
-
+    </section>
+    <section class="land-see-category land-see-recent-content relative mx-auto mb2">
+        <h3 class="ampstart-title-sm center pt1">More Formatters:</h3>
+        <div>
+            <div class="inline-block px3 amp-carousel-slide amp-scrollable-carousel-slide">
+                <a href="@(Model?.BaseUrlWithoutTrailingSlash)/JSON">JSON</a>
+            </div>
+        </div>
+    </section>
     <footer class="center">
         <h3>Share us:</h3>
         <amp-addthis width="320" height="92" data-pub-id="ra-5e6d39d23591d1e6" data-widget-id="wcaj" data-widget-type="inline"></amp-addthis>
