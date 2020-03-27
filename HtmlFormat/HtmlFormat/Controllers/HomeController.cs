@@ -40,7 +40,7 @@ namespace HtmlFormat.Controllers
         {
             HomeViewModel homeViewModel = new HomeViewModel();
             homeViewModel.Title = "HTML Format";
-            homeViewModel.Description = "Paste any HTML code here";
+            homeViewModel.Description = "Format any HTML code here";
 
             homeViewModel.BaseUrlWithoutTrailingSlash = "https://www.htmlformat.org";
             if (env.EnvironmentName.Equals("Development"))
@@ -58,7 +58,7 @@ namespace HtmlFormat.Controllers
         {
             HomeViewModel homeViewModel = new HomeViewModel();
             homeViewModel.Title = "JSON Format";
-            homeViewModel.Description = "Paste any JSON code here";
+            homeViewModel.Description = "Format any JSON code here";
 
             homeViewModel.BaseUrlWithoutTrailingSlash = "https://www.htmlformat.org";
             if (env.EnvironmentName.Equals("Development"))

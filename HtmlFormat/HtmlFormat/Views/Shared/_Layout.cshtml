@@ -4,13 +4,15 @@
 <head>
     <meta charset="utf-8">
     <title>@Model?.Title</title>
+    <meta name="description" content=">@Model?.Description">
+    <link rel="manifest" href="/manifest.webmanifest">
     <script type="application/ld+json">
         {
         "@@context": "http://schema.org",
         "@@type": "Webpage",
         "url": "@Model?.BaseUrlWithoutTrailingSlash",
         "name": "@Model?.Title",
-        "headline": @Model?.Title",
+        "headline": "@Model?.Title",
         "description": "@Model?.Description",
         "mainEntityOfPage": {
         "@@type": "WebPage",
@@ -18,7 +20,7 @@
         }
         }
     </script>
-    <link rel="canonical" href="https://www.htmlformat.org/">
+    <link rel="canonical" href="@Model?.BaseUrlWithoutTrailingSlash">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <partial name="_BoilerplateCssPartial.cshtml" />
     <partial name="_AmpCustomCssPartial.cshtml" />
@@ -50,7 +52,7 @@
         </div>
     </header>
     <section class="relative mx-auto">
-        <h2 class="center">@(Model?.Description)</h2>
+        <h2 class="center ampstart-title-sm">@(Model?.Description)</h2>
         <amp-iframe width="auto"
                     height="500"
                     sandbox="allow-scripts"
