@@ -8,9 +8,10 @@
     <meta charset="utf-8" />
     <link rel=stylesheet href="/doc/docs.css">
     <link rel="stylesheet" href="/lib/codemirror.css">
-    <link rel="stylesheet" href="/addon/hint/show-hint.css">
     <link rel="stylesheet" href="/addon/fold/foldgutter.css" />
     <link href="/css/amp.min.css" rel="stylesheet" />
+    <link href="/addon/lint/lint.css" rel="stylesheet" />
+    <link href="/addon/hint/show-hint.css" rel="stylesheet" />
     <script src="/lib/codemirror.js"></script>
     <script src="/lib/util/formatting.js"></script>
     <script src="/addon/fold/foldcode.js"></script>
@@ -20,13 +21,27 @@
     <script src="/addon/fold/indent-fold.js"></script>
     <script src="/addon/fold/markdown-fold.js"></script>
     <script src="/addon/fold/comment-fold.js"></script>
-    <script src="/addon/hint/show-hint.js"></script>
-    <script src="/addon/hint/xml-hint.js"></script>
-    <script src="/addon/hint/html-hint.js"></script>
     <script src="/mode/xml/xml.js"></script>
     <script src="/mode/javascript/javascript.js"></script>
     <script src="/mode/css/css.js"></script>
     <script src="/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="/addon/hint/anyword-hint.js"></script>
+    <script src="/addon/hint/css-hint.js"></script>
+    <script src="/addon/hint/html-hint.js"></script>
+    <script src="/addon/hint/javascript-hint.js"></script>
+    <script src="/addon/hint/show-hint.js"></script>
+    <script src="/addon/hint/sql-hint.js"></script>
+    <script src="/addon/hint/xml-hint.js"></script>
+    <script src="https://unpkg.com/jshint@2.9.6/dist/jshint.js"></script>
+    <script src="https://unpkg.com/jsonlint@1.6.3/web/jsonlint.js"></script>
+    <script src="https://unpkg.com/csslint@1.0.5/dist/csslint.js"></script>
+    <script src="/addon/lint/coffeescript-lint.js"></script>
+    <script src="/addon/lint/css-lint.js"></script>
+    @*<script src="/addon/lint/html-lint.js"></script>*@ @*Problems html-lint.js:42 Error: HTMLHint not found, not defined on window, or not available through define/require, CodeMirror HTML linting cannot run.*@
+    <script src="/addon/lint/javascript-lint.js"></script>
+    <script src="/addon/lint/json-lint.js"></script>
+    <script src="/addon/lint/lint.js"></script>
+    <script src="/addon/lint/yaml-lint.js"></script>
     <style>
         .CodeMirror {
             border: 1px solid #eee;
@@ -48,9 +63,11 @@
             mode: "@Model.Mode",
             lineNumbers: true,
             lineWrapping: true,
-            extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
+            styleActiveLine: true,
             foldGutter: true,
-            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+            line: true,
+            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter", "@(Model.Lint ? "CodeMirror-lint-markers" : "")"],
+            lint: "@(Model.Lint)"
         });
 
         editor.setSize("100%", "80%");

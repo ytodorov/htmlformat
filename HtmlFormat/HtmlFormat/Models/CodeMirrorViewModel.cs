@@ -10,5 +10,7 @@ namespace HtmlFormat.Models
         public string Mode { get; set; }
 
         public string DefaultValue { get; set; }
+
+        public bool Lint { get; set; }
     }
 }

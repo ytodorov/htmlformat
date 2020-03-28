@@ -66,7 +66,15 @@ namespace HtmlFormat
         {
             app.UseCors("MyPolicy");
             //app.UseHttpsRedirection();
-            app.UseStaticFiles();
+
+            FileExtensionContentTypeProvider provider = new FileExtensionContentTypeProvider();
+            provider.Mappings[".webmanifest"] = "application/manifest+json";
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                ContentTypeProvider = provider
+            });
+
 
             app.UseExceptionHandler(a => a.Run(async context =>
             {
@@ -77,10 +85,7 @@ namespace HtmlFormat
             app.UseRouting();
 
             app.UseAuthorization();
-
-            FileExtensionContentTypeProvider provider = new FileExtensionContentTypeProvider();
-            provider.Mappings[".webmanifest"] = "application/manifest+json";
-            
+                                   
             // This must be before UseHTMLMinification !!!
             app.UseResponseCompression();
 
