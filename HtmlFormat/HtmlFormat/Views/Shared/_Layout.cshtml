@@ -65,7 +65,16 @@
         <h3 class="ampstart-title-sm center pt1">More Formatters:</h3>
         <div>
             <div class="inline-block px3 amp-carousel-slide amp-scrollable-carousel-slide">
-                <a href="@(Model?.BaseUrlWithoutTrailingSlash)/JSON">JSON</a>
+                <div class="inline-block px3 amp-carousel-slide amp-scrollable-carousel-slide">
+                    <a href="@(Model?.BaseUrlWithoutTrailingSlash)">HTML</a>
+                </div>
+                <div class="inline-block px3 amp-carousel-slide amp-scrollable-carousel-slide">
+                    <a href="@(Model?.BaseUrlWithoutTrailingSlash)/json">JSON</a>
+                </div>
+                <div class="inline-block px3 amp-carousel-slide amp-scrollable-carousel-slide">
+
+                    <a href="@(Model?.BaseUrlWithoutTrailingSlash)/json-ld">JSON-LD</a>
+                </div>
             </div>
         </div>
     </section>

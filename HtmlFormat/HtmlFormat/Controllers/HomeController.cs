@@ -71,13 +71,39 @@ namespace HtmlFormat.Controllers
             return View(homeViewModel);
         }
 
+        [Route("json-ld")]
+        public IActionResult JsonLD()
+        {
+            HomeViewModel homeViewModel = new HomeViewModel();
+            homeViewModel.Title = "JSON-LD Format";
+            homeViewModel.Description = "Format any JSON-LD code here";
+
+            homeViewModel.BaseUrlWithoutTrailingSlash = "https://www.htmlformat.org";
+            if (env.EnvironmentName.Equals("Development"))
+            {
+                homeViewModel.BaseUrlWithoutTrailingSlash = "https://localhost:44392";
+            }
+
+            homeViewModel.CodeMirrorMode = "application/ld+json";
+
+            return View("Index", homeViewModel);
+        }
+
         public IActionResult CodeMirror(string mode)
         {
+            mode = mode.Replace(" ", "+");
             CodeMirrorViewModel codeMirrorViewModel = new CodeMirrorViewModel();
             codeMirrorViewModel.Mode = mode;
-            if ("application/json".Equals(mode))
+            if ("text/html".Equals(mode))
             {
-                codeMirrorViewModel.Lint = true;
+                codeMirrorViewModel.Lint = false;
+            }
+            else if ("application/json".Equals(mode))
+            {
+            }
+            else if ("application/ld+json".Equals(mode))
+            {
+                codeMirrorViewModel.DisplayGutterCustom = false;
             }
 
             return View(codeMirrorViewModel);
