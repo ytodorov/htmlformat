@@ -5,10 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="bundleconfig.json" />
+    <Content Remove="wwwroot\bundle.css" />
+    <Content Remove="wwwroot\bundle.js" />
+    <Content Remove="wwwroot\bundle.min.css" />
+    <Content Remove="wwwroot\bundle.min.js" />
     <Content Remove="wwwroot\css\amp.min.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="bundleconfig.json" />
+    <None Include="wwwroot\bundle.css" />
+    <None Include="wwwroot\bundle.js" />
+    <None Include="wwwroot\bundle.min.css" />
+    <None Include="wwwroot\bundle.min.js" />
     <None Include="wwwroot\css\amp.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -16,6 +26,7 @@
 
   <ItemGroup>
     <PackageReference Include="AngleSharp" Version="0.13.0" />
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.435" />
     <PackageReference Include="HtmlMinificationMiddleware" Version="3.1.0" />
   </ItemGroup>
 

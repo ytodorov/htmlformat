@@ -1,0 +1,18 @@
+[
+  {
+    "outputFileName": "codemirror-5.52.2/bundle.js",
+    "inputFiles": [
+      "codemirror-5.52.2/addon/**/*.js",
+      "codemirror-5.52.2/mode/**/*.js"
+    ]
+  },
+  {
+    "outputFileName": "codemirror-5.52.2/bundle.css",
+    "inputFiles": [
+      "codemirror-5.52.2/lib/codemirror.css",
+      "codemirror-5.52.2/addon/**/*.css",
+      "codemirror-5.52.2/mode/**/*.css",
+      "codemirror-5.52.2/theme/**/*.css"
+    ]
+  }
+]

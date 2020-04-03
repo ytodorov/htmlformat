@@ -6,51 +6,321 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel=stylesheet href="/doc/docs.css">
-    <link rel="stylesheet" href="/lib/codemirror.css">
-    <link rel="stylesheet" href="/addon/fold/foldgutter.css" />
-    <link href="/css/amp.min.css" rel="stylesheet" />
-    <link href="/addon/lint/lint.css" rel="stylesheet" />
-    <link href="/addon/hint/show-hint.css" rel="stylesheet" />
-    <script src="/lib/codemirror.js"></script>
-    <script src="/lib/util/formatting.js"></script>
-    <script src="/addon/edit/closebrackets.js"></script>
-    <script src="/addon/edit/closetag.js"></script>
-    <script src="/addon/edit/continuelist.js"></script>
-    <script src="/addon/edit/matchbrackets.js"></script>
-    <script src="/addon/edit/matchtags.js"></script>
-    <script src="/addon/edit/trailingspace.js"></script>
-    <script src="/addon/fold/foldcode.js"></script>
-    <script src="/addon/fold/foldgutter.js"></script>
-    <script src="/addon/fold/brace-fold.js"></script>
-    <script src="/addon/fold/xml-fold.js"></script>
-    <script src="/addon/fold/indent-fold.js"></script>
-    <script src="/addon/fold/markdown-fold.js"></script>
-    <script src="/addon/fold/comment-fold.js"></script>
 
-    <script src="/addon/hint/anyword-hint.js"></script>
-    <script src="/addon/hint/css-hint.js"></script>
-    <script src="/addon/hint/html-hint.js"></script>
-    <script src="/addon/hint/javascript-hint.js"></script>
-    <script src="/addon/hint/show-hint.js"></script>
-    <script src="/addon/hint/sql-hint.js"></script>
-    <script src="/addon/hint/xml-hint.js"></script>
+    <link href="/css/amp.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/lib/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/3024-day.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/3024-night.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/abcdef.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/ambiance-mobile.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/ambiance.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/ayu-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/ayu-mirage.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/base16-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/base16-light.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/bespin.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/blackboard.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/cobalt.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/colorforth.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/darcula.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/duotone-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/duotone-light.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/eclipse.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/elegant.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/erlang-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/gruvbox-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/hopscotch.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/icecoder.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/idea.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/isotope.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/lesser-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/liquibyte.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/lucario.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/material-darker.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/material-ocean.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/material-palenight.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/material.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/mbo.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/mdn-like.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/midnight.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/moxer.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/neat.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/neo.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/night.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/nord.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/oceanic-next.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/panda-syntax.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/paraiso-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/paraiso-light.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/pastel-on-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/railscasts.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/rubyblue.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/seti.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/shadowfox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/solarized.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/ssms.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/the-matrix.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/tomorrow-night-bright.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/tomorrow-night-eighties.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/ttcn.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/twilight.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/vibrant-ink.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/xq-dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/xq-light.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/yeti.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/yonce.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/theme/zenburn.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/dialog/dialog.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/display/fullscreen.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/fold/foldgutter.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/hint/show-hint.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/lint/lint.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/merge/merge.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/scroll/simplescrollbars.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/search/matchesonscrollbar.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/tern/tern.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/tiddlywiki/tiddlywiki.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/tiki/tiki.min.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/lib/codemirror.min.js"></script>
+
     <script src="https://unpkg.com/jshint@2.9.6/dist/jshint.js"></script>
     <script src="https://unpkg.com/jsonlint@1.6.3/web/jsonlint.js"></script>
     <script src="https://unpkg.com/csslint@1.0.5/dist/csslint.js"></script>
-    <script src="/addon/lint/coffeescript-lint.js"></script>
-    <script src="/addon/lint/css-lint.js"></script>
-    @*<script src="/addon/lint/html-lint.js"></script>*@ @*Problems html-lint.js:42 Error: HTMLHint not found, not defined on window, or not available through define/require, CodeMirror HTML linting cannot run.*@
-    <script src="/addon/lint/javascript-lint.js"></script>
-    <script src="/addon/lint/json-lint.js"></script>
-    <script src="/addon/lint/lint.js"></script>
-    <script src="/addon/lint/yaml-lint.js"></script>
-    <script src="/addon/comment/comment.js"></script>
-    <script src="/addon/comment/continuecomment.js"></script>
-    <script src="/mode/xml/xml.js"></script>
-    <script src="/mode/javascript/javascript.js"></script>
-    <script src="/mode/css/css.js"></script>
-    <script src="/mode/htmlmixed/htmlmixed.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/comment/comment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/comment/continuecomment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/dialog/dialog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/display/autorefresh.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/display/fullscreen.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/display/panel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/display/placeholder.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/display/rulers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/edit/closetag.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/edit/continuelist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/edit/matchtags.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/edit/trailingspace.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/fold/brace-fold.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/fold/comment-fold.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/fold/foldcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/fold/foldgutter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/fold/indent-fold.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/fold/markdown-fold.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/fold/xml-fold.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/hint/anyword-hint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/hint/css-hint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/hint/html-hint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/hint/javascript-hint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/hint/sql-hint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/hint/xml-hint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/lint/coffeescript-lint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/lint/css-lint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/lint/html-lint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/lint/javascript-lint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/lint/json-lint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/lint/lint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/lint/yaml-lint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/merge/merge.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/mode/loadmode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/mode/multiplex.min.js"></script>
+    @*<script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/mode/multiplex_test.min.js"></script>*@
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/mode/overlay.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/mode/simple.min.js"></script>
+    @*<script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/runmode/colorize.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/runmode/runmode-standalone.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/runmode/runmode.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/runmode/runmode.node.min.js"></script>*@
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/scroll/annotatescrollbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/scroll/scrollpastend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/scroll/simplescrollbars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/search/jump-to-line.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/search/match-highlighter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/search/matchesonscrollbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/search/search.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/search/searchcursor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/selection/active-line.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/selection/mark-selection.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/selection/selection-pointer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/tern/tern.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/tern/worker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/addon/wrap/hardwrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/apl/apl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/asciiarmor/asciiarmor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/asn.1/asn.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/asterisk/asterisk.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/brainfuck/brainfuck.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/clike/clike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/clojure/clojure.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/cmake/cmake.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/cobol/cobol.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/coffeescript/coffeescript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/commonlisp/commonlisp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/crystal/crystal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/css/css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/cypher/cypher.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/d/d.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/dart/dart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/diff/diff.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/django/django.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/dockerfile/dockerfile.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/dtd/dtd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/dylan/dylan.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/ebnf/ebnf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/ecl/ecl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/eiffel/eiffel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/elm/elm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/erlang/erlang.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/factor/factor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/fcl/fcl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/forth/forth.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/fortran/fortran.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/gas/gas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/gfm/gfm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/gherkin/gherkin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/go/go.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/groovy/groovy.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/haml/haml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/handlebars/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/haskell/haskell.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/haskell-literate/haskell-literate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/haxe/haxe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/htmlembedded/htmlembedded.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/http/http.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/idl/idl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/jinja2/jinja2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/jsx/jsx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/julia/julia.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/livescript/livescript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/lua/lua.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/markdown/markdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/mathematica/mathematica.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/mbox/mbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/mirc/mirc.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/mllike/mllike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/modelica/modelica.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/mscgen/mscgen.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/mumps/mumps.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/nginx/nginx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/nsis/nsis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/ntriples/ntriples.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/octave/octave.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/oz/oz.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/pascal/pascal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/pegjs/pegjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/perl/perl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/php/php.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/pig/pig.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/powershell/powershell.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/properties/properties.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/protobuf/protobuf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/pug/pug.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/puppet/puppet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/python/python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/q/q.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/r/r.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/rpm/rpm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/rst/rst.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/ruby/ruby.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/rust/rust.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/sas/sas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/sass/sass.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/scheme/scheme.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/shell/shell.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/sieve/sieve.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/slim/slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/smalltalk/smalltalk.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/smarty/smarty.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/solr/solr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/soy/soy.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/sparql/sparql.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/spreadsheet/spreadsheet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/sql/sql.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/stex/stex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/stylus/stylus.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/swift/swift.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/tcl/tcl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/textile/textile.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/tiddlywiki/tiddlywiki.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/tiki/tiki.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/toml/toml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/tornado/tornado.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/troff/troff.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/ttcn/ttcn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/ttcn-cfg/ttcn-cfg.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/turtle/turtle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/twig/twig.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/vb/vb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/vbscript/vbscript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/velocity/velocity.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/verilog/verilog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/vhdl/vhdl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/vue/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/webidl/webidl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/xquery/xquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/yacas/yacas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/yaml/yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/yaml-frontmatter/yaml-frontmatter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/mode/z80/z80.min.js"></script>
+
+    <script src="~/lib/util/formatting.js"></script>
+    @*<link rel=stylesheet href="/doc/docs.css">
+        <link rel="stylesheet" href="/lib/codemirror.css">
+        <link rel="stylesheet" href="/addon/fold/foldgutter.css" />
+
+        <link href="/css/amp.min.css" rel="stylesheet" />
+        <link href="/addon/lint/lint.css" rel="stylesheet" />
+        <link href="/addon/hint/show-hint.css" rel="stylesheet" />
+        <script src="/lib/codemirror.js"></script>
+        <script src="/lib/util/formatting.js"></script>
+        <script src="/addon/edit/closebrackets.js"></script>
+        <script src="/addon/edit/closetag.js"></script>
+        <script src="/addon/edit/continuelist.js"></script>
+        <script src="/addon/edit/matchbrackets.js"></script>
+        <script src="/addon/edit/matchtags.js"></script>
+        <script src="/addon/edit/trailingspace.js"></script>
+        <script src="/addon/fold/foldcode.js"></script>
+        <script src="/addon/fold/foldgutter.js"></script>
+        <script src="/addon/fold/brace-fold.js"></script>
+        <script src="/addon/fold/xml-fold.js"></script>
+        <script src="/addon/fold/indent-fold.js"></script>
+        <script src="/addon/fold/markdown-fold.js"></script>
+        <script src="/addon/fold/comment-fold.js"></script>
+
+        <script src="/addon/hint/anyword-hint.js"></script>
+        <script src="/addon/hint/css-hint.js"></script>
+        <script src="/addon/hint/html-hint.js"></script>
+        <script src="/addon/hint/javascript-hint.js"></script>
+        <script src="/addon/hint/show-hint.js"></script>
+        <script src="/addon/hint/sql-hint.js"></script>
+        <script src="/addon/hint/xml-hint.js"></script>
+        <script src="https://unpkg.com/jshint@2.9.6/dist/jshint.js"></script>
+        <script src="https://unpkg.com/jsonlint@1.6.3/web/jsonlint.js"></script>
+        <script src="https://unpkg.com/csslint@1.0.5/dist/csslint.js"></script>
+        <script src="/addon/lint/coffeescript-lint.js"></script>
+        <script src="/addon/lint/css-lint.js"></script>
+        <script src="/addon/lint/html-lint.js"></script> Problems html-lint.js:42 Error: HTMLHint not found, not defined on window, or not available through define/require, CodeMirror HTML linting cannot run.
+        <script src="/addon/lint/javascript-lint.js"></script>
+        <script src="/addon/lint/json-lint.js"></script>
+        <script src="/addon/lint/lint.js"></script>
+        <script src="/addon/lint/yaml-lint.js"></script>
+        <script src="/addon/comment/comment.js"></script>
+        <script src="/addon/comment/continuecomment.js"></script>*@
+    @*<script src="/mode/xml/xml.js"></script>
+        <script src="/mode/javascript/javascript.js"></script>
+        <script src="/mode/css/css.js"></script>
+        <script src="/mode/htmlmixed/htmlmixed.js"></script>*@
+
     <style>
         .CodeMirror {
             border: 1px solid #eee;
@@ -69,7 +339,7 @@
     </div>
     <script>
         var editor = CodeMirror.fromTextArea(myTextarea, {
-            mode: "@(Html.Raw(Model.Mode))",
+            mode: "@(Html.Raw(Model.Mode))",           
             @if (Model.Line)
             {
             @:    line: true,
@@ -113,7 +383,7 @@
         //    mode: "application/ld+json",
         //    lineWrapping: true
         //});
-        editor.setSize("100%", "80%");
+        editor.setSize("100%", "400px");
 
         function getSelectedRange() {
             return { from: editor.getCursor(true), to: editor.getCursor(false) };
