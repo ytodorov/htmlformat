@@ -339,7 +339,7 @@
     </div>
     <script>
         var editor = CodeMirror.fromTextArea(myTextarea, {
-            mode: "@(Html.Raw(Model.Mode))",           
+            mode: "@(Html.Raw(Model.Mode?.Replace("-", "+")))",           
             @if (Model.Line)
             {
             @:    line: true,

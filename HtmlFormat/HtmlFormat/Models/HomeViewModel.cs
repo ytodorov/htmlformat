@@ -14,5 +14,6 @@ namespace HtmlFormat.Models
         public string Description { get; set; }
 
         public string CodeMirrorMode { get; set; }
+                
     }
 }

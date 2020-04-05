@@ -54,7 +54,21 @@ namespace ScriptsHelper
 
             }
             var result = stringBuilder.ToString();
-            Console.WriteLine("Hello World!");
+
+            var lines = File.ReadAllLines("CodeMirrorMimeTypes.txt");
+
+            StringBuilder mimeTypes = new StringBuilder();
+
+            foreach (var line in lines)
+            {
+
+                var mimeType = line.Split(":").First();
+                mimeTypes.Append(mimeType);
+                mimeTypes.Append(",");
+            }
+
+            var resMimeTypes = mimeTypes.ToString();
+
         }
     }
 }

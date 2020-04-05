@@ -53,12 +53,18 @@ namespace HtmlFormat.Controllers
             return View(homeViewModel);
         }
 
-        [Route("json")]
-        public IActionResult Json()
+        [HttpGet("{*url}", Order = int.MaxValue)]
+        public IActionResult CatchAll()
         {
+            var modeFromUrl = HttpContext.Request.Path.ToString().Replace("/", string.Empty);
+
+            modeFromUrl = modeFromUrl.Replace("-", "+");
+            var mimeType = HfConstants.MimeTypesDic[modeFromUrl.ToLowerInvariant()];
+
+            var mode = modeFromUrl.ToUpper();
             HomeViewModel homeViewModel = new HomeViewModel();
-            homeViewModel.Title = "JSON Format";
-            homeViewModel.Description = "Format any JSON code here";
+            homeViewModel.Title = $"{mode} Format";
+            homeViewModel.Description = $"Format any {mode} code here";
 
             homeViewModel.BaseUrlWithoutTrailingSlash = "https://www.htmlformat.org";
             if (env.EnvironmentName.Equals("Development"))
@@ -66,28 +72,46 @@ namespace HtmlFormat.Controllers
                 homeViewModel.BaseUrlWithoutTrailingSlash = "https://localhost:44392";
             }
 
-            homeViewModel.CodeMirrorMode = "application/json";
-
-            return View(homeViewModel);
-        }
-
-        [Route("json-ld")]
-        public IActionResult JsonLD()
-        {
-            HomeViewModel homeViewModel = new HomeViewModel();
-            homeViewModel.Title = "JSON-LD Format";
-            homeViewModel.Description = "Format any JSON-LD code here";
-
-            homeViewModel.BaseUrlWithoutTrailingSlash = "https://www.htmlformat.org";
-            if (env.EnvironmentName.Equals("Development"))
-            {
-                homeViewModel.BaseUrlWithoutTrailingSlash = "https://localhost:44392";
-            }
-
-            homeViewModel.CodeMirrorMode = "application/ld+json";
+            homeViewModel.CodeMirrorMode = mimeType;
 
             return View("Index", homeViewModel);
         }
+
+        //[Route("json")]
+        //public IActionResult Json()
+        //{
+        //    HomeViewModel homeViewModel = new HomeViewModel();
+        //    homeViewModel.Title = "JSON Format";
+        //    homeViewModel.Description = "Format any JSON code here";
+
+        //    homeViewModel.BaseUrlWithoutTrailingSlash = "https://www.htmlformat.org";
+        //    if (env.EnvironmentName.Equals("Development"))
+        //    {
+        //        homeViewModel.BaseUrlWithoutTrailingSlash = "https://localhost:44392";
+        //    }
+
+        //    homeViewModel.CodeMirrorMode = "application/json";
+
+        //    return View(homeViewModel);
+        //}
+
+        //[Route("json-ld")]
+        //public IActionResult JsonLD()
+        //{
+        //    HomeViewModel homeViewModel = new HomeViewModel();
+        //    homeViewModel.Title = "JSON-LD Format";
+        //    homeViewModel.Description = "Format any JSON-LD code here";
+
+        //    homeViewModel.BaseUrlWithoutTrailingSlash = "https://www.htmlformat.org";
+        //    if (env.EnvironmentName.Equals("Development"))
+        //    {
+        //        homeViewModel.BaseUrlWithoutTrailingSlash = "https://localhost:44392";
+        //    }
+
+        //    homeViewModel.CodeMirrorMode = "application/ld+json";
+
+        //    return View("Index", homeViewModel);
+        //}
 
         public IActionResult CodeMirror(string mode)
         {
@@ -104,6 +128,11 @@ namespace HtmlFormat.Controllers
             else if ("application/ld+json".Equals(mode))
             {
                 codeMirrorViewModel.DisplayGutterCustom = false;
+            }
+            else
+            {
+                // Generally disable lint
+                codeMirrorViewModel.Lint = false;
             }
 
             return View(codeMirrorViewModel);

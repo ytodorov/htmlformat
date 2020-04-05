@@ -1,0 +1,195 @@
+﻿text/apl: "apl"
+application/pgp: "asciiarmor"
+application/pgp-encrypted: "asciiarmor"
+application/pgp-keys: "asciiarmor"
+application/pgp-signature: "asciiarmor"
+text/x-ttcn-asn: {name: "asn.1", keywords: {…}, cmipVerbs: {…}, compareTypes: {…}, status: {…}, …}
+text/x-asterisk: "asterisk"
+text/x-brainfuck: "brainfuck"
+text/x-csrc: {name: "clike", keywords: {…}, blockKeywords: {…}, defKeywords: {…}, types: ƒ, …}
+text/x-c: {name: "clike", keywords: {…}, blockKeywords: {…}, defKeywords: {…}, types: ƒ, …}
+text/x-chdr: {name: "clike", keywords: {…}, blockKeywords: {…}, defKeywords: {…}, types: ƒ, …}
+text/x-c++src: {name: "clike", keywords: {…}, blockKeywords: {…}, defKeywords: {…}, types: ƒ, …}
+text/x-c++hdr: {name: "clike", keywords: {…}, blockKeywords: {…}, defKeywords: {…}, types: ƒ, …}
+text/x-java: {name: "clike", keywords: {…}, types: {…}, blockKeywords: {…}, defKeywords: {…}, …}
+text/x-csharp: {name: "clike", keywords: {…}, types: {…}, blockKeywords: {…}, defKeywords: {…}, …}
+text/x-scala: {name: "clike", keywords: {…}, types: {…}, multiLineStrings: true, blockKeywords: {…}, …}
+text/x-kotlin: {name: "clike", keywords: {…}, types: {…}, intendSwitch: false, indentStatements: false, …}
+x-shader/x-vertex: {name: "clike", keywords: {…}, types: {…}, blockKeywords: {…}, builtin: {…}, …}
+x-shader/x-fragment: {name: "clike", keywords: {…}, types: {…}, blockKeywords: {…}, builtin: {…}, …}
+text/x-nesc: {name: "clike", keywords: {…}, blockKeywords: {…}, atoms: {…}, types: ƒ, …}
+text/x-objectivec: {name: "clike", keywords: {…}, builtin: {…}, blockKeywords: {…}, types: ƒ, …}
+text/x-objectivec++: {name: "clike", keywords: {…}, builtin: {…}, blockKeywords: {…}, types: ƒ, …}
+text/x-squirrel: {name: "clike", keywords: {…}, blockKeywords: {…}, defKeywords: {…}, types: ƒ, …}
+text/x-ceylon: {name: "clike", keywords: {…}, blockKeywords: {…}, defKeywords: {…}, types: ƒ, …}
+text/x-clojure: "clojure"
+text/x-clojurescript: "clojure"
+application/edn: "clojure"
+text/x-cmake: "cmake"
+text/x-cobol: "cobol"
+application/vnd.coffeescript: "coffeescript"
+text/x-coffeescript: "coffeescript"
+text/coffeescript: "coffeescript"
+text/x-common-lisp: "commonlisp"
+text/x-crystal: "crystal"
+text/css: {documentTypes: {…}, mediaTypes: {…}, mediaFeatures: {…}, mediaValueKeywords: {…}, propertyKeywords: {…}, …}
+text/x-scss: {mediaTypes: {…}, mediaFeatures: {…}, mediaValueKeywords: {…}, propertyKeywords: {…}, nonStandardPropertyKeywords: {…}, …}
+text/x-less: {mediaTypes: {…}, mediaFeatures: {…}, mediaValueKeywords: {…}, propertyKeywords: {…}, nonStandardPropertyKeywords: {…}, …}
+text/x-gss: {documentTypes: {…}, mediaTypes: {…}, mediaFeatures: {…}, propertyKeywords: {…}, nonStandardPropertyKeywords: {…}, …}
+application/x-cypher-query: "cypher"
+text/x-d: {name: "d", keywords: {…}, blockKeywords: {…}, builtin: {…}, atoms: {…}, …}
+application/dart: {name: "clike", keywords: {…}, blockKeywords: {…}, builtin: {…}, atoms: {…}, …}
+text/x-diff: "diff"
+text/x-django: "django"
+text/x-dockerfile: "dockerfile"
+application/xml-dtd: "dtd"
+text/x-dylan: "dylan"
+text/x-ebnf: "ebnf"
+text/x-ecl: "ecl"
+text/x-eiffel: "eiffel"
+text/x-elm: "elm"
+text/x-erlang: "erlang"
+text/x-factor: "factor"
+text/x-fcl: "fcl"
+text/x-forth: "forth"
+text/x-fortran: "fortran"
+text/x-gfm: "gfm"
+text/x-feature: "gherkin"
+text/x-go: "go"
+text/x-groovy: "groovy"
+text/x-haml: "haml"
+text/x-handlebars-template: "handlebars"
+text/x-haskell: "haskell"
+text/x-literate-haskell: "haskell-literate"
+text/x-haxe: "haxe"
+text/x-hxml: "hxml"
+application/x-ejs: {name: "htmlembedded", scriptingModeSpec: "javascript"}
+application/x-aspx: {name: "htmlembedded", scriptingModeSpec: "text/x-csharp"}
+application/x-jsp: {name: "htmlembedded", scriptingModeSpec: "text/x-java"}
+application/x-erb: {name: "htmlembedded", scriptingModeSpec: "ruby"}
+text/html: "htmlmixed"
+message/http: "http"
+text/x-idl: "idl"
+text/javascript: "javascript"
+text/ecmascript: "javascript"
+application/javascript: "javascript"
+application/x-javascript: "javascript"
+application/ecmascript: "javascript"
+application/json: {name: "javascript", json: true}
+application/x-json: {name: "javascript", json: true}
+application/ld+json: {name: "javascript", jsonld: true}
+text/typescript: {name: "javascript", typescript: true}
+application/typescript: {name: "javascript", typescript: true}
+text/jinja2: "jinja2"
+text/jsx: "jsx"
+text/typescript-jsx: {name: "jsx", base: {…}}
+text/x-julia: "julia"
+text/x-livescript: "livescript"
+text/x-lua: "lua"
+text/markdown: "markdown"
+text/x-markdown: "markdown"
+text/x-mathematica: {name: "mathematica"}
+application/mbox: "mbox"
+text/mirc: "mirc"
+text/x-ocaml: {name: "mllike", extraWords: {…}}
+text/x-fsharp: {name: "mllike", extraWords: {…}, slashComments: true}
+text/x-sml: {name: "mllike", extraWords: {…}, slashComments: true}
+text/x-modelica: {name: "modelica", keywords: {…}, builtin: {…}, atoms: {…}, helperType: "text/x-modelica"}
+text/x-mscgen: "mscgen"
+text/x-xu: {name: "mscgen", language: "xu"}
+text/x-msgenny: {name: "mscgen", language: "msgenny"}
+text/x-mumps: "mumps"
+text/x-nginx-conf: "nginx"
+text/x-nsis: "nsis"
+application/n-triples: "ntriples"
+application/n-quads: "ntriples"
+text/n-triples: "ntriples"
+text/x-octave: "octave"
+text/x-oz: "oz"
+text/x-pascal: "pascal"
+text/x-perl: "perl"
+application/x-httpd-php: "php"
+application/x-httpd-php-open: {name: "php", startOpen: true}
+text/x-php: {name: "clike", helperType: "php", keywords: {…}, blockKeywords: {…}, defKeywords: {…}, …}
+text/x-pig: {name: "pig", builtins: {…}, keywords: {…}, types: {…}}
+application/x-powershell: "powershell"
+text/x-properties: "properties"
+text/x-ini: "properties"
+text/x-protobuf: "protobuf"
+text/x-pug: "pug"
+text/x-jade: "pug"
+text/x-puppet: "puppet"
+text/x-python: "python"
+text/x-cython: {name: "python", extra_keywords: Array(20)}
+text/x-q: "q"
+text/x-rsrc: "r"
+text/x-rpm-changes: "rpm-changes"
+text/x-rpm-spec: "rpm-spec"
+text/x-rst: "rst"
+text/x-ruby: "ruby"
+text/x-rustsrc: "rust"
+text/rust: "rust"
+text/x-sas: "sas"
+text/x-sass: "sass"
+text/x-scheme: "scheme"
+text/x-sh: "shell"
+application/x-sh: "shell"
+application/sieve: "sieve"
+text/x-slim: "slim"
+application/x-slim: "slim"
+text/x-stsrc: {name: "smalltalk"}
+text/x-smarty: "smarty"
+text/x-solr: "solr"
+text/x-soy: "soy"
+application/sparql-query: "sparql"
+text/x-spreadsheet: "spreadsheet"
+text/x-sql: {name: "sql", keywords: {…}, builtin: {…}, atoms: {…}, dateSQL: {…}, …}
+text/x-mssql: {name: "sql", client: {…}, keywords: {…}, builtin: {…}, atoms: {…}, …}
+text/x-mysql: {name: "sql", client: {…}, keywords: {…}, builtin: {…}, atoms: {…}, …}
+text/x-mariadb: {name: "sql", client: {…}, keywords: {…}, builtin: {…}, atoms: {…}, …}
+text/x-sqlite: {name: "sql", client: {…}, keywords: {…}, builtin: {…}, atoms: {…}, …}
+text/x-cassandra: {name: "sql", client: {…}, keywords: {…}, builtin: {…}, atoms: {…}, …}
+text/x-plsql: {name: "sql", client: {…}, keywords: {…}, builtin: {…}, operatorChars: /^[*\/+\-%<>!=~]/, …}
+text/x-hive: {name: "sql", keywords: {…}, builtin: {…}, atoms: {…}, operatorChars: /^[*+\-%<>!=]/, …}
+text/x-pgsql: {name: "sql", client: {…}, keywords: {…}, builtin: {…}, atoms: {…}, …}
+text/x-gql: {name: "sql", keywords: {…}, atoms: {…}, builtin: {…}, operatorChars: /^[*+\-%<>!=]/}
+text/x-gpsql: {name: "sql", client: {…}, keywords: {…}, builtin: {…}, atoms: {…}, …}
+text/x-sparksql: {name: "sql", keywords: {…}, builtin: {…}, atoms: {…}, operatorChars: /^[*\/+\-%<>!=~&|^]/, …}
+text/x-esper: {name: "sql", client: {…}, keywords: {…}, builtin: {…}, atoms: {…}, …}
+text/x-stex: "stex"
+text/x-latex: "stex"
+text/x-styl: "stylus"
+text/x-swift: "swift"
+text/x-tcl: "tcl"
+text/x-textile: "textile"
+text/x-tiddlywiki: "tiddlywiki"
+text/tiki: "tiki"
+text/x-toml: "toml"
+text/x-tornado: "tornado"
+text/troff: "troff"
+text/x-troff: "troff"
+application/x-troff: "troff"
+text/x-ttcn: {name: "ttcn", keywords: {…}, builtin: {…}, types: {…}, timerOps: {…}, …}
+text/x-ttcn3: {name: "ttcn", keywords: {…}, builtin: {…}, types: {…}, timerOps: {…}, …}
+text/x-ttcnpp: {name: "ttcn", keywords: {…}, builtin: {…}, types: {…}, timerOps: {…}, …}
+text/x-ttcn-cfg: {name: "ttcn-cfg", keywords: {…}, fileNCtrlMaskOptions: {…}, externalCommands: {…}, multiLineStrings: true}
+text/turtle: "turtle"
+text/x-twig: "twig"
+text/x-vb: "vb"
+text/vbscript: "vbscript"
+text/velocity: "velocity"
+text/x-verilog: {name: "verilog"}
+text/x-systemverilog: {name: "verilog"}
+text/x-tlv: {name: "verilog", hooks: {…}}
+text/x-vhdl: "vhdl"
+script/x-vue: "vue"
+text/x-vue: "vue"
+text/x-webidl: "webidl"
+text/xml: "xml"
+application/xml: "xml"
+application/xquery: "xquery"
+text/x-yacas: {name: "yacas"}
+text/x-yaml: "yaml"
+text/yaml: "yaml"
+text/x-z80: "z80"
+text/x-ez80: {name: "z80", ez80: true}
